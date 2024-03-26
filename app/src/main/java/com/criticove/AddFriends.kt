@@ -147,10 +147,11 @@ fun AddFriends(navController: NavController, usermodel: userModel) {
                     },
 
                     )
-
-                LazyColumn {
-                    items(filteredFriends) { friend ->
-                        AddFriends(friend, ognewFriendsList, usermodel)
+                if (searchText.isNotEmpty()) {
+                    LazyColumn {
+                        items(filteredFriends) { friend ->
+                            AddFriends(friend, ognewFriendsList, usermodel)
+                        }
                     }
                 }
             }
